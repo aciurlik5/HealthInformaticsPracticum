@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify84d7a894e1844-staging-235347-authRole",
+      "UnauthRoleArn": "arn:aws:iam::689344193484:role/amplify-amplify84d7a894e1844-staging-235347-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::689344193484:role/amplify-amplify84d7a894e1844-staging-235347-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-amplify84d7a894e1844-staging-235347-deployment",
+      "UnauthRoleName": "amplify-amplify84d7a894e1844-staging-235347-unauthRole",
+      "StackName": "amplify-amplify84d7a894e1844-staging-235347",
+      "StackId": "arn:aws:cloudformation:us-east-1:689344193484:stack/amplify-amplify84d7a894e1844-staging-235347/92de9370-72c8-11ee-bf6f-0e11297ecb0d",
+      "AmplifyAppId": "dhshzhyyzvqlq"
+    },
+    "categories": {
+      "auth": {
+        "healthinformaticspra0c74b542": {}
+      }
+    }
+  }
+}
