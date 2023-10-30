@@ -1,0 +1,102 @@
+{
+    "elements": [
+
+
+        {
+            "type": "dropdown",
+            "name": "alchol-amount",
+            "title": "How many servings of alcohol did you consume?",
+            "isRequired": true,
+        
+            "choices":["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+          },
+
+
+        {
+            "type": "dropdown",
+            "name": "sweet-drink-amount",
+            "title": "How many servings of sodas and sugar sweetened drinks did you drink today?",
+            "isRequired": true,
+        
+            "choices":["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+          },
+
+          {
+            "type": "dropdown",
+            "name": "water-amount",
+            "title": "How many servings of water did you drink today?",
+            "isRequired": true,
+        
+            "choices":["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+          },
+
+
+    {
+        "type": "checkbox",
+        "isRequired": true,
+        "choices": [{
+            "text": "Difficulty falling asleep", 
+            "value": "Difficulty falling asleep"
+          }, {
+            "text": "Difficulty staying asleep",
+            "value": "Difficulty staying asleep"
+          }, {
+            "text": "Not feeling rested in the morning",
+            "value": "Not feeling rested in the morning"
+          },
+          {
+            "text": "Difficulty getting out of bed",
+            "value": "Difficulty getting out of bed"
+          }],
+        "name": "sleep-quality",
+        "title": "Check any of the issues you had with sleep?",
+        "colCount": 2
+      },
+
+      {
+        "type": "boolean",
+        "name": "pain-indication",
+        "label": "I experienced pain I would like to track.",
+        "titleLocation": "hidden",
+        "valueTrue": "Yes",
+        "valueFalse": "No",
+        "renderAs": "checkbox"
+      },
+
+      {
+        "type": "comment",
+        "name": "pain-description",
+        "visibleIf": "{pain-indication} == Yes",
+        "title": "Please describe the location, frequency, type and duration of the pain."
+      
+      },
+
+      {
+        "type": "dropdown",
+        "name": "stress-amount",
+        "title": "On a scale from 1-10 how stressful was your day?",
+        "isRequired": true,
+    
+        "choices": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+      },
+
+      {
+        "name": "exercise",
+        "type": "text",
+        "title": "How many minutes of physical activity did you have today?",
+        "inputType": "number",
+        "min": 0,
+        "max": 500,
+        "defaultValue": 0,
+        "isRequired": true
+      },
+
+      {
+        "name": "daily-goals-reflection",
+        "title": "What did you accomplish/not accomplish today? Do you have any ideas for how to improve this tommorrow? ",
+        "type": "comment"
+      }
+
+
+]
+}
