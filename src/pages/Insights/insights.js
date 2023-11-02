@@ -1,7 +1,6 @@
-import 'survey-core/defaultV2.min.css';
 
-import {Model } from 'survey-core';
-import { BorderlessLight } from "survey-core/themes/borderless-light";
+
+
 
 
 
