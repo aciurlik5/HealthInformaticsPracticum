@@ -1,5 +1,6 @@
 {
   "AppSyncApiName": "healthinformaticspra",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2023-10-30T03:25:05.930Z"
 }
