@@ -65,3 +65,31 @@ export const listNotes = /* GraphQL */ `
     }
   }
 `;
+
+
+export const listMorningQuestionnaire = /* GraphQL */ `
+  query ListNotes(
+    $filter: ModelNoteFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        date
+        sleepAmount
+        sleepIssueFallingAsleep
+        sleepIssueStayingAsleep
+        sleepIssueRested
+        sleepIssueBedLeave
+        stressLevel
+        goal
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;

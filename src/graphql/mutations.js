@@ -91,3 +91,31 @@ export const deleteNote = /* GraphQL */ `
     }
   }
 `;
+
+
+export const createMorningQuestionnaire = /* GraphQL */ `
+  mutation CreateMorningQuestionnaire(
+    $input: CreateMorningQuestionnaireInput!
+    $condition: ModelMorningQuestionnaireConditionInput
+  ) {
+    createNote(input: $input, condition: $condition) {
+      id
+      date
+      sleepAmount
+      sleepIssueFallingAsleep
+      sleepIssueStayingAsleep
+      sleepIssueBedLeave
+      stressLevel
+      goal
+      sleepIssueRested
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+
+
+
+
+

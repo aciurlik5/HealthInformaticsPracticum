@@ -17,10 +17,10 @@ type MorningQuestionnaire @model @auth(rules: [{allow: public}]) {
   sleepAmount: Int
   sleepIssueFallingAsleep: Boolean
   sleepIssueStayingAsleep: Boolean
-  sleepIssueReseted: Boolean
   sleepIssueBedLeave: Boolean
   stressLevel: Int
   goal: String
+  sleepIssueRested: String
 }
 
 type Todo @model @auth(rules: [{allow: public}]) {
