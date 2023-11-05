@@ -1,6 +1,104 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getNightQuestionnaire = /* GraphQL */ `
+  query GetNightQuestionnaire($id: ID!) {
+    getNightQuestionnaire(id: $id) {
+      id
+      date
+      alcoholServings
+      sugaryDrinksServings
+      waterServings
+      isPain
+      painDescription
+      stressLevel
+      physicalActivityAmount
+      reflection
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listNightQuestionnaires = /* GraphQL */ `
+  query ListNightQuestionnaires(
+    $filter: ModelNightQuestionnaireFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listNightQuestionnaires(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        date
+        alcoholServings
+        sugaryDrinksServings
+        waterServings
+        isPain
+        painDescription
+        stressLevel
+        physicalActivityAmount
+        reflection
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getMorningQuestionnaire = /* GraphQL */ `
+  query GetMorningQuestionnaire($id: ID!) {
+    getMorningQuestionnaire(id: $id) {
+      id
+      date
+      sleepAmount
+      sleepIssueFallingAsleep
+      sleepIssueStayingAsleep
+      sleepIssueBedLeave
+      stressLevel
+      goal
+      sleepIssueRested
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listMorningQuestionnaire = /* GraphQL */ `
+  query listMorningQuestionnaire(
+    $filter: ModelMorningQuestionnaireFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listMorningQuestionnaire(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        date
+        sleepAmount
+        sleepIssueFallingAsleep
+        sleepIssueStayingAsleep
+        sleepIssueBedLeave
+        stressLevel
+        goal
+        sleepIssueRested
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
 export const getTodo = /* GraphQL */ `
   query GetTodo($id: ID!) {
     getTodo(id: $id) {
@@ -56,34 +154,6 @@ export const listNotes = /* GraphQL */ `
         id
         name
         description
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-  }
-`;
-
-
-export const listMorningQuestionnaire = /* GraphQL */ `
-  query ListNotes(
-    $filter: ModelNoteFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        date
-        sleepAmount
-        sleepIssueFallingAsleep
-        sleepIssueStayingAsleep
-        sleepIssueRested
-        sleepIssueBedLeave
-        stressLevel
-        goal
         createdAt
         updatedAt
         __typename

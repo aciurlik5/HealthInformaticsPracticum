@@ -4,9 +4,8 @@ import morningQuestionaire from './morning.json'
 import {Model } from 'survey-core';
 import {Survey} from 'survey-react-ui'
 import { BorderlessLight } from "survey-core/themes/borderless-light";
-import {
-  createMorningQuestionnaire 
-} from "../../graphql/mutations"
+import { createMorningQuestionnaire } from '../../graphql/mutations';
+
 
 
 function Morning() {
@@ -21,7 +20,7 @@ survey.onComplete.add(function (sender, options) {
   options.showSaveInProgress();
   const xhr = new XMLHttpRequest();
 console.log(sender.data);
-// createMorningQuestionnaire(sender.data['sleep-amount'], false, false, false, sender.data['stress-amount'], sender.data['daily-goals'], false );
+createMorningQuestionnaire();
 
 // sleepAmount
 // sleepIssueFallingAsleep

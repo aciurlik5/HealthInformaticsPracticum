@@ -1,6 +1,135 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createNightQuestionnaire = /* GraphQL */ `
+  mutation CreateNightQuestionnaire(
+    $input: CreateNightQuestionnaireInput!
+    $condition: ModelNightQuestionnaireConditionInput
+  ) {
+    createNightQuestionnaire(input: $input, condition: $condition) {
+      id
+      date
+      alcoholServings
+      sugaryDrinksServings
+      waterServings
+      isPain
+      painDescription
+      stressLevel
+      physicalActivityAmount
+      reflection
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateNightQuestionnaire = /* GraphQL */ `
+  mutation UpdateNightQuestionnaire(
+    $input: UpdateNightQuestionnaireInput!
+    $condition: ModelNightQuestionnaireConditionInput
+  ) {
+    updateNightQuestionnaire(input: $input, condition: $condition) {
+      id
+      date
+      alcoholServings
+      sugaryDrinksServings
+      waterServings
+      isPain
+      painDescription
+      stressLevel
+      physicalActivityAmount
+      reflection
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteNightQuestionnaire = /* GraphQL */ `
+  mutation DeleteNightQuestionnaire(
+    $input: DeleteNightQuestionnaireInput!
+    $condition: ModelNightQuestionnaireConditionInput
+  ) {
+    deleteNightQuestionnaire(input: $input, condition: $condition) {
+      id
+      date
+      alcoholServings
+      sugaryDrinksServings
+      waterServings
+      isPain
+      painDescription
+      stressLevel
+      physicalActivityAmount
+      reflection
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createMorningQuestionnaire = /* GraphQL */ `
+  mutation CreateMorningQuestionnaire(
+    $input: CreateMorningQuestionnaireInput!
+    $condition: ModelMorningQuestionnaireConditionInput
+  ) {
+    createMorningQuestionnaire(input: $input, condition: $condition) {
+      id
+      date
+      sleepAmount
+      sleepIssueFallingAsleep
+      sleepIssueStayingAsleep
+      sleepIssueBedLeave
+      stressLevel
+      goal
+      sleepIssueRested
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateMorningQuestionnaire = /* GraphQL */ `
+  mutation UpdateMorningQuestionnaire(
+    $input: UpdateMorningQuestionnaireInput!
+    $condition: ModelMorningQuestionnaireConditionInput
+  ) {
+    updateMorningQuestionnaire(input: $input, condition: $condition) {
+      id
+      date
+      sleepAmount
+      sleepIssueFallingAsleep
+      sleepIssueStayingAsleep
+      sleepIssueBedLeave
+      stressLevel
+      goal
+      sleepIssueRested
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteMorningQuestionnaire = /* GraphQL */ `
+  mutation DeleteMorningQuestionnaire(
+    $input: DeleteMorningQuestionnaireInput!
+    $condition: ModelMorningQuestionnaireConditionInput
+  ) {
+    deleteMorningQuestionnaire(input: $input, condition: $condition) {
+      id
+      date
+      sleepAmount
+      sleepIssueFallingAsleep
+      sleepIssueStayingAsleep
+      sleepIssueBedLeave
+      stressLevel
+      goal
+      sleepIssueRested
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const createTodo = /* GraphQL */ `
   mutation CreateTodo(
     $input: CreateTodoInput!
@@ -91,31 +220,3 @@ export const deleteNote = /* GraphQL */ `
     }
   }
 `;
-
-
-export const createMorningQuestionnaire = /* GraphQL */ `
-  mutation CreateMorningQuestionnaire(
-    $input: CreateMorningQuestionnaireInput!
-    $condition: ModelMorningQuestionnaireConditionInput
-  ) {
-    createNote(input: $input, condition: $condition) {
-      id
-      date
-      sleepAmount
-      sleepIssueFallingAsleep
-      sleepIssueStayingAsleep
-      sleepIssueBedLeave
-      stressLevel
-      goal
-      sleepIssueRested
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-
-
-
-
-
