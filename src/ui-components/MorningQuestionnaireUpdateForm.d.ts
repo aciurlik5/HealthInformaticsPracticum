@@ -27,9 +27,9 @@ export declare type MorningQuestionnaireUpdateFormInputValues = {
     sleepIssueFallingAsleep?: boolean;
     sleepIssueStayingAsleep?: boolean;
     sleepIssueBedLeave?: boolean;
-    stressLevel?: number;
+    sleepIssueRested?: boolean;
     goal?: string;
-    sleepIssueRested?: string;
+    stressLevel?: number;
 };
 export declare type MorningQuestionnaireUpdateFormValidationValues = {
     date?: ValidationFunction<string>;
@@ -37,9 +37,9 @@ export declare type MorningQuestionnaireUpdateFormValidationValues = {
     sleepIssueFallingAsleep?: ValidationFunction<boolean>;
     sleepIssueStayingAsleep?: ValidationFunction<boolean>;
     sleepIssueBedLeave?: ValidationFunction<boolean>;
-    stressLevel?: ValidationFunction<number>;
+    sleepIssueRested?: ValidationFunction<boolean>;
     goal?: ValidationFunction<string>;
-    sleepIssueRested?: ValidationFunction<string>;
+    stressLevel?: ValidationFunction<number>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type MorningQuestionnaireUpdateFormOverridesProps = {
@@ -49,9 +49,9 @@ export declare type MorningQuestionnaireUpdateFormOverridesProps = {
     sleepIssueFallingAsleep?: PrimitiveOverrideProps<SwitchFieldProps>;
     sleepIssueStayingAsleep?: PrimitiveOverrideProps<SwitchFieldProps>;
     sleepIssueBedLeave?: PrimitiveOverrideProps<SwitchFieldProps>;
-    stressLevel?: PrimitiveOverrideProps<TextFieldProps>;
+    sleepIssueRested?: PrimitiveOverrideProps<SwitchFieldProps>;
     goal?: PrimitiveOverrideProps<TextFieldProps>;
-    sleepIssueRested?: PrimitiveOverrideProps<TextFieldProps>;
+    stressLevel?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type MorningQuestionnaireUpdateFormProps = React.PropsWithChildren<{
     overrides?: MorningQuestionnaireUpdateFormOverridesProps | undefined | null;

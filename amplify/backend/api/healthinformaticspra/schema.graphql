@@ -18,9 +18,9 @@ type MorningQuestionnaire @model @auth(rules: [{allow: public}]) {
   sleepIssueFallingAsleep: Boolean
   sleepIssueStayingAsleep: Boolean
   sleepIssueBedLeave: Boolean
-  stressLevel: Int
+  sleepIssueRested: Boolean
   goal: String
-  sleepIssueRested: String
+  stressLevel: Int
 }
 
 type Todo @model @auth(rules: [{allow: public}]) {

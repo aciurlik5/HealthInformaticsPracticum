@@ -60,22 +60,22 @@ export const getMorningQuestionnaire = /* GraphQL */ `
       sleepIssueFallingAsleep
       sleepIssueStayingAsleep
       sleepIssueBedLeave
-      stressLevel
-      goal
       sleepIssueRested
+      goal
+      stressLevel
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const listMorningQuestionnaire = /* GraphQL */ `
-  query listMorningQuestionnaire(
+export const listMorningQuestionnaires = /* GraphQL */ `
+  query ListMorningQuestionnaires(
     $filter: ModelMorningQuestionnaireFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listMorningQuestionnaire(
+    listMorningQuestionnaires(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -87,9 +87,9 @@ export const listMorningQuestionnaire = /* GraphQL */ `
         sleepIssueFallingAsleep
         sleepIssueStayingAsleep
         sleepIssueBedLeave
-        stressLevel
-        goal
         sleepIssueRested
+        goal
+        stressLevel
         createdAt
         updatedAt
         __typename

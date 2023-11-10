@@ -1,6 +1,6 @@
 
 import { API, } from "aws-amplify";
-import { listMorningQuestionnaire } from "../../graphql/queries";
+import { listMorningQuestionnaires, listNightQuestionnaires } from "../../graphql/queries";
 
 
 
@@ -8,12 +8,15 @@ import { listMorningQuestionnaire } from "../../graphql/queries";
 function Insights() {
 
     async function fetchData(){
-     let morningData = await API.graphql({query: listMorningQuestionnaire, variables:{'_deleted': false}})
+     let morningData = await API.graphql({query: listMorningQuestionnaires, variables:{'_deleted': false}})
+     let nightData = await API.graphql({query: listNightQuestionnaires, variables:{'_deleted': false}})
+     console.log('Data')
      console.log(morningData);
+     console.log(nightData)
 
     }
 
-
+    fetchData();
     return <div>
         
         <h1>Insights</h1>

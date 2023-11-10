@@ -79,9 +79,9 @@ export const createMorningQuestionnaire = /* GraphQL */ `
       sleepIssueFallingAsleep
       sleepIssueStayingAsleep
       sleepIssueBedLeave
-      stressLevel
-      goal
       sleepIssueRested
+      goal
+      stressLevel
       createdAt
       updatedAt
       __typename
@@ -100,9 +100,9 @@ export const updateMorningQuestionnaire = /* GraphQL */ `
       sleepIssueFallingAsleep
       sleepIssueStayingAsleep
       sleepIssueBedLeave
-      stressLevel
-      goal
       sleepIssueRested
+      goal
+      stressLevel
       createdAt
       updatedAt
       __typename
@@ -121,9 +121,9 @@ export const deleteMorningQuestionnaire = /* GraphQL */ `
       sleepIssueFallingAsleep
       sleepIssueStayingAsleep
       sleepIssueBedLeave
-      stressLevel
-      goal
       sleepIssueRested
+      goal
+      stressLevel
       createdAt
       updatedAt
       __typename

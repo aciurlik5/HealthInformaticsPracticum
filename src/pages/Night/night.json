@@ -30,29 +30,6 @@
             "choices":["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
           },
 
-
-    {
-        "type": "checkbox",
-        "isRequired": true,
-        "choices": [{
-            "text": "Difficulty falling asleep", 
-            "value": "Difficulty falling asleep"
-          }, {
-            "text": "Difficulty staying asleep",
-            "value": "Difficulty staying asleep"
-          }, {
-            "text": "Not feeling rested in the morning",
-            "value": "Not feeling rested in the morning"
-          },
-          {
-            "text": "Difficulty getting out of bed",
-            "value": "Difficulty getting out of bed"
-          }],
-        "name": "sleep-quality",
-        "title": "Check any of the issues you had with sleep?",
-        "colCount": 2
-      },
-
       {
         "type": "boolean",
         "name": "pain-indication",

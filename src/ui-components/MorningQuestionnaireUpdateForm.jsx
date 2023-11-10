@@ -35,9 +35,9 @@ export default function MorningQuestionnaireUpdateForm(props) {
     sleepIssueFallingAsleep: false,
     sleepIssueStayingAsleep: false,
     sleepIssueBedLeave: false,
-    stressLevel: "",
+    sleepIssueRested: false,
     goal: "",
-    sleepIssueRested: "",
+    stressLevel: "",
   };
   const [date, setDate] = React.useState(initialValues.date);
   const [sleepAmount, setSleepAmount] = React.useState(
@@ -52,12 +52,12 @@ export default function MorningQuestionnaireUpdateForm(props) {
   const [sleepIssueBedLeave, setSleepIssueBedLeave] = React.useState(
     initialValues.sleepIssueBedLeave
   );
-  const [stressLevel, setStressLevel] = React.useState(
-    initialValues.stressLevel
-  );
-  const [goal, setGoal] = React.useState(initialValues.goal);
   const [sleepIssueRested, setSleepIssueRested] = React.useState(
     initialValues.sleepIssueRested
+  );
+  const [goal, setGoal] = React.useState(initialValues.goal);
+  const [stressLevel, setStressLevel] = React.useState(
+    initialValues.stressLevel
   );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
@@ -69,9 +69,9 @@ export default function MorningQuestionnaireUpdateForm(props) {
     setSleepIssueFallingAsleep(cleanValues.sleepIssueFallingAsleep);
     setSleepIssueStayingAsleep(cleanValues.sleepIssueStayingAsleep);
     setSleepIssueBedLeave(cleanValues.sleepIssueBedLeave);
-    setStressLevel(cleanValues.stressLevel);
-    setGoal(cleanValues.goal);
     setSleepIssueRested(cleanValues.sleepIssueRested);
+    setGoal(cleanValues.goal);
+    setStressLevel(cleanValues.stressLevel);
     setErrors({});
   };
   const [morningQuestionnaireRecord, setMorningQuestionnaireRecord] =
@@ -97,9 +97,9 @@ export default function MorningQuestionnaireUpdateForm(props) {
     sleepIssueFallingAsleep: [],
     sleepIssueStayingAsleep: [],
     sleepIssueBedLeave: [],
-    stressLevel: [],
-    goal: [],
     sleepIssueRested: [],
+    goal: [],
+    stressLevel: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -132,9 +132,9 @@ export default function MorningQuestionnaireUpdateForm(props) {
           sleepIssueFallingAsleep: sleepIssueFallingAsleep ?? null,
           sleepIssueStayingAsleep: sleepIssueStayingAsleep ?? null,
           sleepIssueBedLeave: sleepIssueBedLeave ?? null,
-          stressLevel: stressLevel ?? null,
-          goal: goal ?? null,
           sleepIssueRested: sleepIssueRested ?? null,
+          goal: goal ?? null,
+          stressLevel: stressLevel ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -201,9 +201,9 @@ export default function MorningQuestionnaireUpdateForm(props) {
               sleepIssueFallingAsleep,
               sleepIssueStayingAsleep,
               sleepIssueBedLeave,
-              stressLevel,
-              goal,
               sleepIssueRested,
+              goal,
+              stressLevel,
             };
             const result = onChange(modelFields);
             value = result?.date ?? value;
@@ -236,9 +236,9 @@ export default function MorningQuestionnaireUpdateForm(props) {
               sleepIssueFallingAsleep,
               sleepIssueStayingAsleep,
               sleepIssueBedLeave,
-              stressLevel,
-              goal,
               sleepIssueRested,
+              goal,
+              stressLevel,
             };
             const result = onChange(modelFields);
             value = result?.sleepAmount ?? value;
@@ -267,9 +267,9 @@ export default function MorningQuestionnaireUpdateForm(props) {
               sleepIssueFallingAsleep: value,
               sleepIssueStayingAsleep,
               sleepIssueBedLeave,
-              stressLevel,
-              goal,
               sleepIssueRested,
+              goal,
+              stressLevel,
             };
             const result = onChange(modelFields);
             value = result?.sleepIssueFallingAsleep ?? value;
@@ -300,9 +300,9 @@ export default function MorningQuestionnaireUpdateForm(props) {
               sleepIssueFallingAsleep,
               sleepIssueStayingAsleep: value,
               sleepIssueBedLeave,
-              stressLevel,
-              goal,
               sleepIssueRested,
+              goal,
+              stressLevel,
             };
             const result = onChange(modelFields);
             value = result?.sleepIssueStayingAsleep ?? value;
@@ -333,9 +333,9 @@ export default function MorningQuestionnaireUpdateForm(props) {
               sleepIssueFallingAsleep,
               sleepIssueStayingAsleep,
               sleepIssueBedLeave: value,
-              stressLevel,
-              goal,
               sleepIssueRested,
+              goal,
+              stressLevel,
             };
             const result = onChange(modelFields);
             value = result?.sleepIssueBedLeave ?? value;
@@ -352,6 +352,68 @@ export default function MorningQuestionnaireUpdateForm(props) {
         hasError={errors.sleepIssueBedLeave?.hasError}
         {...getOverrideProps(overrides, "sleepIssueBedLeave")}
       ></SwitchField>
+      <SwitchField
+        label="Sleep issue rested"
+        defaultChecked={false}
+        isDisabled={false}
+        isChecked={sleepIssueRested}
+        onChange={(e) => {
+          let value = e.target.checked;
+          if (onChange) {
+            const modelFields = {
+              date,
+              sleepAmount,
+              sleepIssueFallingAsleep,
+              sleepIssueStayingAsleep,
+              sleepIssueBedLeave,
+              sleepIssueRested: value,
+              goal,
+              stressLevel,
+            };
+            const result = onChange(modelFields);
+            value = result?.sleepIssueRested ?? value;
+          }
+          if (errors.sleepIssueRested?.hasError) {
+            runValidationTasks("sleepIssueRested", value);
+          }
+          setSleepIssueRested(value);
+        }}
+        onBlur={() => runValidationTasks("sleepIssueRested", sleepIssueRested)}
+        errorMessage={errors.sleepIssueRested?.errorMessage}
+        hasError={errors.sleepIssueRested?.hasError}
+        {...getOverrideProps(overrides, "sleepIssueRested")}
+      ></SwitchField>
+      <TextField
+        label="Goal"
+        isRequired={false}
+        isReadOnly={false}
+        value={goal}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              date,
+              sleepAmount,
+              sleepIssueFallingAsleep,
+              sleepIssueStayingAsleep,
+              sleepIssueBedLeave,
+              sleepIssueRested,
+              goal: value,
+              stressLevel,
+            };
+            const result = onChange(modelFields);
+            value = result?.goal ?? value;
+          }
+          if (errors.goal?.hasError) {
+            runValidationTasks("goal", value);
+          }
+          setGoal(value);
+        }}
+        onBlur={() => runValidationTasks("goal", goal)}
+        errorMessage={errors.goal?.errorMessage}
+        hasError={errors.goal?.hasError}
+        {...getOverrideProps(overrides, "goal")}
+      ></TextField>
       <TextField
         label="Stress level"
         isRequired={false}
@@ -370,9 +432,9 @@ export default function MorningQuestionnaireUpdateForm(props) {
               sleepIssueFallingAsleep,
               sleepIssueStayingAsleep,
               sleepIssueBedLeave,
-              stressLevel: value,
-              goal,
               sleepIssueRested,
+              goal,
+              stressLevel: value,
             };
             const result = onChange(modelFields);
             value = result?.stressLevel ?? value;
@@ -386,68 +448,6 @@ export default function MorningQuestionnaireUpdateForm(props) {
         errorMessage={errors.stressLevel?.errorMessage}
         hasError={errors.stressLevel?.hasError}
         {...getOverrideProps(overrides, "stressLevel")}
-      ></TextField>
-      <TextField
-        label="Goal"
-        isRequired={false}
-        isReadOnly={false}
-        value={goal}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              date,
-              sleepAmount,
-              sleepIssueFallingAsleep,
-              sleepIssueStayingAsleep,
-              sleepIssueBedLeave,
-              stressLevel,
-              goal: value,
-              sleepIssueRested,
-            };
-            const result = onChange(modelFields);
-            value = result?.goal ?? value;
-          }
-          if (errors.goal?.hasError) {
-            runValidationTasks("goal", value);
-          }
-          setGoal(value);
-        }}
-        onBlur={() => runValidationTasks("goal", goal)}
-        errorMessage={errors.goal?.errorMessage}
-        hasError={errors.goal?.hasError}
-        {...getOverrideProps(overrides, "goal")}
-      ></TextField>
-      <TextField
-        label="Sleep issue rested"
-        isRequired={false}
-        isReadOnly={false}
-        value={sleepIssueRested}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              date,
-              sleepAmount,
-              sleepIssueFallingAsleep,
-              sleepIssueStayingAsleep,
-              sleepIssueBedLeave,
-              stressLevel,
-              goal,
-              sleepIssueRested: value,
-            };
-            const result = onChange(modelFields);
-            value = result?.sleepIssueRested ?? value;
-          }
-          if (errors.sleepIssueRested?.hasError) {
-            runValidationTasks("sleepIssueRested", value);
-          }
-          setSleepIssueRested(value);
-        }}
-        onBlur={() => runValidationTasks("sleepIssueRested", sleepIssueRested)}
-        errorMessage={errors.sleepIssueRested?.errorMessage}
-        hasError={errors.sleepIssueRested?.hasError}
-        {...getOverrideProps(overrides, "sleepIssueRested")}
       ></TextField>
       <Flex
         justifyContent="space-between"
