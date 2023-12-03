@@ -1,6 +1,78 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getFhirId = /* GraphQL */ `
+  query GetFhirId($id: ID!) {
+    getFhirId(id: $id) {
+      id
+      email
+      FhirId
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listFhirIds = /* GraphQL */ `
+  query ListFhirIds(
+    $filter: ModelFhirIdFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listFhirIds(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        email
+        FhirId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getDoctorPlan = /* GraphQL */ `
+  query GetDoctorPlan($id: ID!) {
+    getDoctorPlan(id: $id) {
+      id
+      date
+      sendSleep
+      sendAlcohol
+      sendPA
+      concern
+      userEmail
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listDoctorPlans = /* GraphQL */ `
+  query ListDoctorPlans(
+    $filter: ModelDoctorPlanFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listDoctorPlans(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        date
+        sendSleep
+        sendAlcohol
+        sendPA
+        concern
+        userEmail
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
 export const getNightQuestionnaire = /* GraphQL */ `
   query GetNightQuestionnaire($id: ID!) {
     getNightQuestionnaire(id: $id) {
@@ -14,6 +86,7 @@ export const getNightQuestionnaire = /* GraphQL */ `
       stressLevel
       physicalActivityAmount
       reflection
+      userEmail
       createdAt
       updatedAt
       __typename
@@ -42,6 +115,7 @@ export const listNightQuestionnaires = /* GraphQL */ `
         stressLevel
         physicalActivityAmount
         reflection
+        userEmail
         createdAt
         updatedAt
         __typename
@@ -63,6 +137,7 @@ export const getMorningQuestionnaire = /* GraphQL */ `
       sleepIssueRested
       goal
       stressLevel
+      userEmail
       createdAt
       updatedAt
       __typename
@@ -90,6 +165,7 @@ export const listMorningQuestionnaires = /* GraphQL */ `
         sleepIssueRested
         goal
         stressLevel
+        userEmail
         createdAt
         updatedAt
         __typename

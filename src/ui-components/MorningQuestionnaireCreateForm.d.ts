@@ -30,6 +30,7 @@ export declare type MorningQuestionnaireCreateFormInputValues = {
     sleepIssueRested?: boolean;
     goal?: string;
     stressLevel?: number;
+    userEmail?: string;
 };
 export declare type MorningQuestionnaireCreateFormValidationValues = {
     date?: ValidationFunction<string>;
@@ -40,6 +41,7 @@ export declare type MorningQuestionnaireCreateFormValidationValues = {
     sleepIssueRested?: ValidationFunction<boolean>;
     goal?: ValidationFunction<string>;
     stressLevel?: ValidationFunction<number>;
+    userEmail?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type MorningQuestionnaireCreateFormOverridesProps = {
@@ -52,6 +54,7 @@ export declare type MorningQuestionnaireCreateFormOverridesProps = {
     sleepIssueRested?: PrimitiveOverrideProps<SwitchFieldProps>;
     goal?: PrimitiveOverrideProps<TextFieldProps>;
     stressLevel?: PrimitiveOverrideProps<TextFieldProps>;
+    userEmail?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type MorningQuestionnaireCreateFormProps = React.PropsWithChildren<{
     overrides?: MorningQuestionnaireCreateFormOverridesProps | undefined | null;

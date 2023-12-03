@@ -31,6 +31,7 @@ export declare type NightQuestionnaireUpdateFormInputValues = {
     stressLevel?: number;
     physicalActivityAmount?: number;
     reflection?: string;
+    userEmail?: string;
 };
 export declare type NightQuestionnaireUpdateFormValidationValues = {
     date?: ValidationFunction<string>;
@@ -42,6 +43,7 @@ export declare type NightQuestionnaireUpdateFormValidationValues = {
     stressLevel?: ValidationFunction<number>;
     physicalActivityAmount?: ValidationFunction<number>;
     reflection?: ValidationFunction<string>;
+    userEmail?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NightQuestionnaireUpdateFormOverridesProps = {
@@ -55,6 +57,7 @@ export declare type NightQuestionnaireUpdateFormOverridesProps = {
     stressLevel?: PrimitiveOverrideProps<TextFieldProps>;
     physicalActivityAmount?: PrimitiveOverrideProps<TextFieldProps>;
     reflection?: PrimitiveOverrideProps<TextFieldProps>;
+    userEmail?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type NightQuestionnaireUpdateFormProps = React.PropsWithChildren<{
     overrides?: NightQuestionnaireUpdateFormOverridesProps | undefined | null;

@@ -8,10 +8,15 @@ import {
   createMorningQuestionnaire as createMorningQuestionnaireMutation,
 
 } from "../../graphql/mutations";
-import { API } from "aws-amplify";
+import { API, Auth } from "aws-amplify";
+
 
 function Morning() {
-
+  let userEmail;
+  Auth.currentUserInfo().then((userInfo) => {
+    const { attributes = {} } = userInfo;
+    userEmail= attributes['email'];
+  })
 
 
     const survey = new Model(morningQuestionaire);
@@ -33,7 +38,8 @@ console.log(sender.data);
     sleepIssueBedLeave: sleepIssueLeaveBed,
     sleepIssueRested: sleepIssueNotRested,
     goal: sender.data["daily-goals"],
-    stressLevel: parseInt(sender.data["stress-amount"])
+    stressLevel: parseInt(sender.data["stress-amount"]),
+    userEmail: userEmail
 
 
   };

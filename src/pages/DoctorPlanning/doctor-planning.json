@@ -5,6 +5,16 @@
         "name": "daily-goals",
         "title": "What are your main concerns?",
         "type": "comment"
+      },
+
+      {
+        "type": "boolean",
+        "name": "sleep-amount",
+        "label": "You average SLEEP_AMOUNT hours of sleep",
+        "titleLocation": "hidden",
+        "valueTrue": "Yes",
+        "valueFalse": "No",
+        "renderAs": "checkbox"
       }
 
 

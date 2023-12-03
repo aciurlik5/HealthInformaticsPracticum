@@ -1,3 +1,19 @@
+type FhirId @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  email: String
+  FhirId: String
+}
+
+type DoctorPlan @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  date: AWSDate
+  sendSleep: Boolean
+  sendAlcohol: Boolean
+  sendPA: Boolean
+  concern: String
+  userEmail: String
+}
+
 type NightQuestionnaire @model @auth(rules: [{allow: public}]) {
   id: ID!
   date: AWSDate
@@ -9,6 +25,7 @@ type NightQuestionnaire @model @auth(rules: [{allow: public}]) {
   stressLevel: Int
   physicalActivityAmount: Int
   reflection: String
+  userEmail: String
 }
 
 type MorningQuestionnaire @model @auth(rules: [{allow: public}]) {
@@ -21,6 +38,7 @@ type MorningQuestionnaire @model @auth(rules: [{allow: public}]) {
   sleepIssueRested: Boolean
   goal: String
   stressLevel: Int
+  userEmail: String
 }
 
 type Todo @model @auth(rules: [{allow: public}]) {

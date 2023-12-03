@@ -36,6 +36,7 @@ export default function MorningQuestionnaireCreateForm(props) {
     sleepIssueRested: false,
     goal: "",
     stressLevel: "",
+    userEmail: "",
   };
   const [date, setDate] = React.useState(initialValues.date);
   const [sleepAmount, setSleepAmount] = React.useState(
@@ -57,6 +58,7 @@ export default function MorningQuestionnaireCreateForm(props) {
   const [stressLevel, setStressLevel] = React.useState(
     initialValues.stressLevel
   );
+  const [userEmail, setUserEmail] = React.useState(initialValues.userEmail);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setDate(initialValues.date);
@@ -67,6 +69,7 @@ export default function MorningQuestionnaireCreateForm(props) {
     setSleepIssueRested(initialValues.sleepIssueRested);
     setGoal(initialValues.goal);
     setStressLevel(initialValues.stressLevel);
+    setUserEmail(initialValues.userEmail);
     setErrors({});
   };
   const validations = {
@@ -78,6 +81,7 @@ export default function MorningQuestionnaireCreateForm(props) {
     sleepIssueRested: [],
     goal: [],
     stressLevel: [],
+    userEmail: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -113,6 +117,7 @@ export default function MorningQuestionnaireCreateForm(props) {
           sleepIssueRested,
           goal,
           stressLevel,
+          userEmail,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -184,6 +189,7 @@ export default function MorningQuestionnaireCreateForm(props) {
               sleepIssueRested,
               goal,
               stressLevel,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.date ?? value;
@@ -219,6 +225,7 @@ export default function MorningQuestionnaireCreateForm(props) {
               sleepIssueRested,
               goal,
               stressLevel,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.sleepAmount ?? value;
@@ -250,6 +257,7 @@ export default function MorningQuestionnaireCreateForm(props) {
               sleepIssueRested,
               goal,
               stressLevel,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.sleepIssueFallingAsleep ?? value;
@@ -283,6 +291,7 @@ export default function MorningQuestionnaireCreateForm(props) {
               sleepIssueRested,
               goal,
               stressLevel,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.sleepIssueStayingAsleep ?? value;
@@ -316,6 +325,7 @@ export default function MorningQuestionnaireCreateForm(props) {
               sleepIssueRested,
               goal,
               stressLevel,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.sleepIssueBedLeave ?? value;
@@ -349,6 +359,7 @@ export default function MorningQuestionnaireCreateForm(props) {
               sleepIssueRested: value,
               goal,
               stressLevel,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.sleepIssueRested ?? value;
@@ -380,6 +391,7 @@ export default function MorningQuestionnaireCreateForm(props) {
               sleepIssueRested,
               goal: value,
               stressLevel,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.goal ?? value;
@@ -415,6 +427,7 @@ export default function MorningQuestionnaireCreateForm(props) {
               sleepIssueRested,
               goal,
               stressLevel: value,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.stressLevel ?? value;
@@ -428,6 +441,38 @@ export default function MorningQuestionnaireCreateForm(props) {
         errorMessage={errors.stressLevel?.errorMessage}
         hasError={errors.stressLevel?.hasError}
         {...getOverrideProps(overrides, "stressLevel")}
+      ></TextField>
+      <TextField
+        label="User email"
+        isRequired={false}
+        isReadOnly={false}
+        value={userEmail}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              date,
+              sleepAmount,
+              sleepIssueFallingAsleep,
+              sleepIssueStayingAsleep,
+              sleepIssueBedLeave,
+              sleepIssueRested,
+              goal,
+              stressLevel,
+              userEmail: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.userEmail ?? value;
+          }
+          if (errors.userEmail?.hasError) {
+            runValidationTasks("userEmail", value);
+          }
+          setUserEmail(value);
+        }}
+        onBlur={() => runValidationTasks("userEmail", userEmail)}
+        errorMessage={errors.userEmail?.errorMessage}
+        hasError={errors.userEmail?.hasError}
+        {...getOverrideProps(overrides, "userEmail")}
       ></TextField>
       <Flex
         justifyContent="space-between"

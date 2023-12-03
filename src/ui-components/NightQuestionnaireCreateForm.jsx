@@ -37,6 +37,7 @@ export default function NightQuestionnaireCreateForm(props) {
     stressLevel: "",
     physicalActivityAmount: "",
     reflection: "",
+    userEmail: "",
   };
   const [date, setDate] = React.useState(initialValues.date);
   const [alcoholServings, setAlcoholServings] = React.useState(
@@ -59,6 +60,7 @@ export default function NightQuestionnaireCreateForm(props) {
     initialValues.physicalActivityAmount
   );
   const [reflection, setReflection] = React.useState(initialValues.reflection);
+  const [userEmail, setUserEmail] = React.useState(initialValues.userEmail);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setDate(initialValues.date);
@@ -70,6 +72,7 @@ export default function NightQuestionnaireCreateForm(props) {
     setStressLevel(initialValues.stressLevel);
     setPhysicalActivityAmount(initialValues.physicalActivityAmount);
     setReflection(initialValues.reflection);
+    setUserEmail(initialValues.userEmail);
     setErrors({});
   };
   const validations = {
@@ -82,6 +85,7 @@ export default function NightQuestionnaireCreateForm(props) {
     stressLevel: [],
     physicalActivityAmount: [],
     reflection: [],
+    userEmail: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -118,6 +122,7 @@ export default function NightQuestionnaireCreateForm(props) {
           stressLevel,
           physicalActivityAmount,
           reflection,
+          userEmail,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -190,6 +195,7 @@ export default function NightQuestionnaireCreateForm(props) {
               stressLevel,
               physicalActivityAmount,
               reflection,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.date ?? value;
@@ -226,6 +232,7 @@ export default function NightQuestionnaireCreateForm(props) {
               stressLevel,
               physicalActivityAmount,
               reflection,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.alcoholServings ?? value;
@@ -262,6 +269,7 @@ export default function NightQuestionnaireCreateForm(props) {
               stressLevel,
               physicalActivityAmount,
               reflection,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.sugaryDrinksServings ?? value;
@@ -300,6 +308,7 @@ export default function NightQuestionnaireCreateForm(props) {
               stressLevel,
               physicalActivityAmount,
               reflection,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.waterServings ?? value;
@@ -332,6 +341,7 @@ export default function NightQuestionnaireCreateForm(props) {
               stressLevel,
               physicalActivityAmount,
               reflection,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.isPain ?? value;
@@ -364,6 +374,7 @@ export default function NightQuestionnaireCreateForm(props) {
               stressLevel,
               physicalActivityAmount,
               reflection,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.painDescription ?? value;
@@ -400,6 +411,7 @@ export default function NightQuestionnaireCreateForm(props) {
               stressLevel: value,
               physicalActivityAmount,
               reflection,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.stressLevel ?? value;
@@ -436,6 +448,7 @@ export default function NightQuestionnaireCreateForm(props) {
               stressLevel,
               physicalActivityAmount: value,
               reflection,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.physicalActivityAmount ?? value;
@@ -470,6 +483,7 @@ export default function NightQuestionnaireCreateForm(props) {
               stressLevel,
               physicalActivityAmount,
               reflection: value,
+              userEmail,
             };
             const result = onChange(modelFields);
             value = result?.reflection ?? value;
@@ -483,6 +497,39 @@ export default function NightQuestionnaireCreateForm(props) {
         errorMessage={errors.reflection?.errorMessage}
         hasError={errors.reflection?.hasError}
         {...getOverrideProps(overrides, "reflection")}
+      ></TextField>
+      <TextField
+        label="User email"
+        isRequired={false}
+        isReadOnly={false}
+        value={userEmail}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              date,
+              alcoholServings,
+              sugaryDrinksServings,
+              waterServings,
+              isPain,
+              painDescription,
+              stressLevel,
+              physicalActivityAmount,
+              reflection,
+              userEmail: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.userEmail ?? value;
+          }
+          if (errors.userEmail?.hasError) {
+            runValidationTasks("userEmail", value);
+          }
+          setUserEmail(value);
+        }}
+        onBlur={() => runValidationTasks("userEmail", userEmail)}
+        errorMessage={errors.userEmail?.errorMessage}
+        hasError={errors.userEmail?.hasError}
+        {...getOverrideProps(overrides, "userEmail")}
       ></TextField>
       <Flex
         justifyContent="space-between"

@@ -11,12 +11,17 @@ import {
   
   } from "../../graphql/mutations";
 
-import { API } from "aws-amplify";
+import { API, Auth } from "aws-amplify";
 
 
 function Night() {
     const survey = new Model(nightQuestionaire);
-    survey.applyTheme(BorderlessLight)
+    survey.applyTheme(BorderlessLight);
+    let userEmail;
+    Auth.currentUserInfo().then((userInfo) => {
+      const { attributes = {} } = userInfo;
+      userEmail= attributes['email'];
+    })
 
 
     survey.onComplete.add(async function (sender, options) {
@@ -33,7 +38,8 @@ function Night() {
             painDescription: sender.data["pain-description"],
             stressLevel: sender.data["stress-amount"],
             physicalActivityAmount: parseInt(sender.data["exercise"]),
-            reflection: sender.data["daily-goals-reflection"]
+            reflection: sender.data["daily-goals-reflection"],
+            userEmail: userEmail
         };
 
      

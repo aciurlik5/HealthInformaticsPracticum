@@ -1,6 +1,108 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createFhirId = /* GraphQL */ `
+  mutation CreateFhirId(
+    $input: CreateFhirIdInput!
+    $condition: ModelFhirIdConditionInput
+  ) {
+    createFhirId(input: $input, condition: $condition) {
+      id
+      email
+      FhirId
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateFhirId = /* GraphQL */ `
+  mutation UpdateFhirId(
+    $input: UpdateFhirIdInput!
+    $condition: ModelFhirIdConditionInput
+  ) {
+    updateFhirId(input: $input, condition: $condition) {
+      id
+      email
+      FhirId
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteFhirId = /* GraphQL */ `
+  mutation DeleteFhirId(
+    $input: DeleteFhirIdInput!
+    $condition: ModelFhirIdConditionInput
+  ) {
+    deleteFhirId(input: $input, condition: $condition) {
+      id
+      email
+      FhirId
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createDoctorPlan = /* GraphQL */ `
+  mutation CreateDoctorPlan(
+    $input: CreateDoctorPlanInput!
+    $condition: ModelDoctorPlanConditionInput
+  ) {
+    createDoctorPlan(input: $input, condition: $condition) {
+      id
+      date
+      sendSleep
+      sendAlcohol
+      sendPA
+      concern
+      userEmail
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateDoctorPlan = /* GraphQL */ `
+  mutation UpdateDoctorPlan(
+    $input: UpdateDoctorPlanInput!
+    $condition: ModelDoctorPlanConditionInput
+  ) {
+    updateDoctorPlan(input: $input, condition: $condition) {
+      id
+      date
+      sendSleep
+      sendAlcohol
+      sendPA
+      concern
+      userEmail
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteDoctorPlan = /* GraphQL */ `
+  mutation DeleteDoctorPlan(
+    $input: DeleteDoctorPlanInput!
+    $condition: ModelDoctorPlanConditionInput
+  ) {
+    deleteDoctorPlan(input: $input, condition: $condition) {
+      id
+      date
+      sendSleep
+      sendAlcohol
+      sendPA
+      concern
+      userEmail
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const createNightQuestionnaire = /* GraphQL */ `
   mutation CreateNightQuestionnaire(
     $input: CreateNightQuestionnaireInput!
@@ -17,6 +119,7 @@ export const createNightQuestionnaire = /* GraphQL */ `
       stressLevel
       physicalActivityAmount
       reflection
+      userEmail
       createdAt
       updatedAt
       __typename
@@ -39,6 +142,7 @@ export const updateNightQuestionnaire = /* GraphQL */ `
       stressLevel
       physicalActivityAmount
       reflection
+      userEmail
       createdAt
       updatedAt
       __typename
@@ -61,6 +165,7 @@ export const deleteNightQuestionnaire = /* GraphQL */ `
       stressLevel
       physicalActivityAmount
       reflection
+      userEmail
       createdAt
       updatedAt
       __typename
@@ -82,6 +187,7 @@ export const createMorningQuestionnaire = /* GraphQL */ `
       sleepIssueRested
       goal
       stressLevel
+      userEmail
       createdAt
       updatedAt
       __typename
@@ -103,6 +209,7 @@ export const updateMorningQuestionnaire = /* GraphQL */ `
       sleepIssueRested
       goal
       stressLevel
+      userEmail
       createdAt
       updatedAt
       __typename
@@ -124,6 +231,7 @@ export const deleteMorningQuestionnaire = /* GraphQL */ `
       sleepIssueRested
       goal
       stressLevel
+      userEmail
       createdAt
       updatedAt
       __typename

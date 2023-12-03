@@ -1,6 +1,96 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateFhirId = /* GraphQL */ `
+  subscription OnCreateFhirId($filter: ModelSubscriptionFhirIdFilterInput) {
+    onCreateFhirId(filter: $filter) {
+      id
+      email
+      FhirId
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateFhirId = /* GraphQL */ `
+  subscription OnUpdateFhirId($filter: ModelSubscriptionFhirIdFilterInput) {
+    onUpdateFhirId(filter: $filter) {
+      id
+      email
+      FhirId
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteFhirId = /* GraphQL */ `
+  subscription OnDeleteFhirId($filter: ModelSubscriptionFhirIdFilterInput) {
+    onDeleteFhirId(filter: $filter) {
+      id
+      email
+      FhirId
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateDoctorPlan = /* GraphQL */ `
+  subscription OnCreateDoctorPlan(
+    $filter: ModelSubscriptionDoctorPlanFilterInput
+  ) {
+    onCreateDoctorPlan(filter: $filter) {
+      id
+      date
+      sendSleep
+      sendAlcohol
+      sendPA
+      concern
+      userEmail
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateDoctorPlan = /* GraphQL */ `
+  subscription OnUpdateDoctorPlan(
+    $filter: ModelSubscriptionDoctorPlanFilterInput
+  ) {
+    onUpdateDoctorPlan(filter: $filter) {
+      id
+      date
+      sendSleep
+      sendAlcohol
+      sendPA
+      concern
+      userEmail
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteDoctorPlan = /* GraphQL */ `
+  subscription OnDeleteDoctorPlan(
+    $filter: ModelSubscriptionDoctorPlanFilterInput
+  ) {
+    onDeleteDoctorPlan(filter: $filter) {
+      id
+      date
+      sendSleep
+      sendAlcohol
+      sendPA
+      concern
+      userEmail
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const onCreateNightQuestionnaire = /* GraphQL */ `
   subscription OnCreateNightQuestionnaire(
     $filter: ModelSubscriptionNightQuestionnaireFilterInput
@@ -16,6 +106,7 @@ export const onCreateNightQuestionnaire = /* GraphQL */ `
       stressLevel
       physicalActivityAmount
       reflection
+      userEmail
       createdAt
       updatedAt
       __typename
@@ -37,6 +128,7 @@ export const onUpdateNightQuestionnaire = /* GraphQL */ `
       stressLevel
       physicalActivityAmount
       reflection
+      userEmail
       createdAt
       updatedAt
       __typename
@@ -58,6 +150,7 @@ export const onDeleteNightQuestionnaire = /* GraphQL */ `
       stressLevel
       physicalActivityAmount
       reflection
+      userEmail
       createdAt
       updatedAt
       __typename
@@ -78,6 +171,7 @@ export const onCreateMorningQuestionnaire = /* GraphQL */ `
       sleepIssueRested
       goal
       stressLevel
+      userEmail
       createdAt
       updatedAt
       __typename
@@ -98,6 +192,7 @@ export const onUpdateMorningQuestionnaire = /* GraphQL */ `
       sleepIssueRested
       goal
       stressLevel
+      userEmail
       createdAt
       updatedAt
       __typename
@@ -118,6 +213,7 @@ export const onDeleteMorningQuestionnaire = /* GraphQL */ `
       sleepIssueRested
       goal
       stressLevel
+      userEmail
       createdAt
       updatedAt
       __typename

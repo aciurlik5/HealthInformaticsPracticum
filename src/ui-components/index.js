@@ -4,6 +4,10 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+export { default as DoctorPlanCreateForm } from "./DoctorPlanCreateForm";
+export { default as DoctorPlanUpdateForm } from "./DoctorPlanUpdateForm";
+export { default as FhirIdCreateForm } from "./FhirIdCreateForm";
+export { default as FhirIdUpdateForm } from "./FhirIdUpdateForm";
 export { default as MorningQuestionnaireCreateForm } from "./MorningQuestionnaireCreateForm";
 export { default as MorningQuestionnaireUpdateForm } from "./MorningQuestionnaireUpdateForm";
 export { default as NightQuestionnaireCreateForm } from "./NightQuestionnaireCreateForm";
