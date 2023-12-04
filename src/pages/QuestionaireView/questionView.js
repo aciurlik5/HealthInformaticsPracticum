@@ -66,10 +66,7 @@ function QuestionaireView() {
         }
 
         nightDataArray =  nightData.data.listNightQuestionnaires.items.filter((question => question.userEmail === userEmail));
-        console.log('DAD', doctorData.data.listDoctorPlans.items)
         doctorDataArray =  doctorData.data.listDoctorPlans.items.filter((question => question.userEmail === userEmail));
-        console.log('DA')
-        console.log(doctorDataArray);
         setNight(nightDataArray)
         setMorning(morningDataArray)
         setDoctor(doctorDataArray)
@@ -86,8 +83,62 @@ function QuestionaireView() {
         }
 
 
-    return <div>
+    return <div style={{paddingTop: "15px"}}>
+
+
+<div className='calm-background' style={{paddingBottom:"30px", paddingTop:"3px"}}>
+
+
+
+{selectedSurvey.type === 'Morning' &&
             
+            <div>
+            <h2>Morning Answers</h2>
+                <b>Date: </b> {selectedSurvey.data.date}<br></br> 
+                <b>Sleep Amount: </b> {selectedSurvey.data.sleepAmount} <br></br>
+                <b>Sleep Issues: </b> {selectedSurvey.data.sleepIssues}<br></br>
+                <b>Stress Amount: </b> {selectedSurvey.data.stressLevel} <br></br>
+                <b>Goals: </b> {selectedSurvey.data.goal}<br></br>
+            </div>
+
+        }
+
+       
+    {selectedSurvey.type === 'Night' &&
+        <div>
+            <h2>Night Answers</h2>
+                <b>Date: </b> {selectedSurvey.data.date}<br></br> 
+                <b>Alcohol Servings:  </b> {selectedSurvey.data.alcoholServings} <br></br>
+                <b>Sugary Drinks Servings: </b> {selectedSurvey.data.sugaryDrinksServings}<br></br>
+                <b>Water Servings: </b> {selectedSurvey.data.waterServings}<br></br>
+                <b>Pain Description: </b> {selectedSurvey.data.painDescription}<br></br>
+                <b>Stress Amount: </b> {selectedSurvey.data.stressLevel}<br></br>
+                <b>Physical Activity Amount: </b> {selectedSurvey.data.physicalActivityAmount}<br></br>
+                <b>Reflections: </b>{selectedSurvey.data.reflection}<br></br>
+
+            </div>
+    }
+
+    {selectedSurvey.type === 'Doctor' &&
+        <div>
+            <h2>Doctor Planning</h2>
+                <b>Date: </b>{selectedSurvey.data.date}<br></br> 
+                <b>Concerns: </b>{selectedSurvey.data.concern}<br></br>
+
+            </div>
+    }
+
+
+
+
+
+
+
+    </div>
+
+
+        <h2>Past Responses</h2>
+        <div style={{paddingLeft:"40%"}}>
         <table>
             <tr>
                 <th>Morning</th>
@@ -119,49 +170,12 @@ function QuestionaireView() {
 
 
 
-
+        </div>
 
 
             
         
-        {selectedSurvey.type === 'Morning' &&
-            
-                <div>
-                <h2>Morning Answers</h2>
-                    Date: {selectedSurvey.data.date}<br></br> 
-                    Sleep Amount: {selectedSurvey.data.sleepAmount} <br></br>
-                    Sleep Issues: {selectedSurvey.data.sleepIssues}<br></br>
-                    Stress Amount: {selectedSurvey.data.stressLevel} <br></br>
-                    Goals: {selectedSurvey.data.goal}<br></br>
-                </div>
-
-            }
-
-           
-        {selectedSurvey.type === 'Night' &&
-            <div>
-                <h2>Night Answers</h2>
-                    Date: {selectedSurvey.data.date}<br></br> 
-                    Alcohol Servings: {selectedSurvey.data.alcoholServings} <br></br>
-                    Sugary Drinks Servings: {selectedSurvey.data.sugaryDrinksServings}<br></br>
-                    Water Servings: {selectedSurvey.data.waterServings}<br></br>
-                    Pain Description: {selectedSurvey.data.painDescription}<br></br>
-                    Stress Amount: {selectedSurvey.data.stressLevel}<br></br>
-                    Physical Activity Amount: {selectedSurvey.data.physicalActivityAmount}<br></br>
-                    Reflections: {selectedSurvey.data.reflection}<br></br>
-
-                </div>
-        }
-
-        {selectedSurvey.type === 'Doctor' &&
-            <div>
-                <h2>Doctor Planning</h2>
-                    Date: {selectedSurvey.data.date}<br></br> 
-                    Concerns: {selectedSurvey.data.concern}<br></br>
-
-                </div>
-        }
-        </div>
+    </div>
 }
 
 export default QuestionaireView;

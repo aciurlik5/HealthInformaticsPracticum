@@ -322,12 +322,19 @@ sleep.valueQuantity.value = data.sleepAmount;
             return sum / array.length;
     }
 
-    return   <div style={{padding: "40px"}} className='calm-background'>
-            <div >
+    return   <div style={{padding: "40px"}} >
 
-          
+            <div style={{backgroundColor: "white"}}>    
+                
+            <h2>Let's plan for a productive visit with your physician</h2>
+            
+            
+            </div>
+            
+            
+            
+            <div className='calm-background'  style={{paddingBottom: "50px"}}>
 
-            <h3>Let's plan for a productive visit with your physician</h3>
 
                 First Name: <br></br>
                 <input type="text-area" id="firstName" onChange={handleFirstNameChange}></input><br></br>
@@ -339,13 +346,13 @@ sleep.valueQuantity.value = data.sleepAmount;
                 <input type="text-area" id="problem" onChange={handleConcernChange}></input><br></br>
 
                 <input type="checkbox" id="sleep" checked={sendSleep} onChange={handleSleepCheckboxChange}></input>
-                <label for="sleep"> You get an average of {data.sleepAmount} hours of sleep.</label><br></br>
+                <label for="sleep"> You get an average of {data.sleepAmount.toFixed(2)} hours of sleep per day.</label><br></br>
                
                 <input type="checkbox" id="physicalActivity" checked={sendPhysicalActivity} onChange={handlePACheckboxChange}></input>
-                <label for="physicalActivity"> You get an average of {data.physicalActivity} minutes of physical activity.</label><br></br>
+                <label for="physicalActivity"> You get an average of {data.physicalActivity.toFixed(2)} minutes of physical activity per day.</label><br></br>
 
                 <input type="checkbox" id="alcohol"  checked={sendAlcohol} onChange={handlAlcoholCheckboxChange}></input>
-                <label for="alcohol"> You drink an average {data.alcohol} servings of alcohol.</label><br></br>
+                <label for="alcohol"> You drink an average {data.alcohol.toFixed(2)} servings of alcohol per day.</label><br></br>
 
                 <button className="buttons" onClick={submitForm}>Submit</button>
 
