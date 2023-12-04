@@ -109,10 +109,10 @@ function DoctorPlanning() {
          }
 
          return {
-            sleepAmount: average(alcholServings),
-            water: average(waterServings),
-            alcohol: average(alcholServings),
-            physicalActivity: average(physicalActivityAmount)
+            sleepAmount: average(alcholServings).toFixed(2),
+            water: average(waterServings).toFixed(2),
+            alcohol: average(alcholServings).toFixed(2),
+            physicalActivity: average(physicalActivityAmount).toFixed(2)
          }
     
         }
@@ -346,13 +346,13 @@ sleep.valueQuantity.value = data.sleepAmount;
                 <input type="text-area" id="problem" onChange={handleConcernChange}></input><br></br>
 
                 <input type="checkbox" id="sleep" checked={sendSleep} onChange={handleSleepCheckboxChange}></input>
-                <label for="sleep"> You get an average of {data.sleepAmount.toFixed(2)} hours of sleep per day.</label><br></br>
+                <label for="sleep"> You get an average of {data.sleepAmount} hours of sleep per day.</label><br></br>
                
                 <input type="checkbox" id="physicalActivity" checked={sendPhysicalActivity} onChange={handlePACheckboxChange}></input>
-                <label for="physicalActivity"> You get an average of {data.physicalActivity.toFixed(2)} minutes of physical activity per day.</label><br></br>
+                <label for="physicalActivity"> You get an average of {data.physicalActivity} minutes of physical activity per day.</label><br></br>
 
                 <input type="checkbox" id="alcohol"  checked={sendAlcohol} onChange={handlAlcoholCheckboxChange}></input>
-                <label for="alcohol"> You drink an average {data.alcohol.toFixed(2)} servings of alcohol per day.</label><br></br>
+                <label for="alcohol"> You drink an average {data.alcohol} servings of alcohol per day.</label><br></br>
 
                 <button className="buttons" onClick={submitForm}>Submit</button>
 

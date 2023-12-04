@@ -204,7 +204,7 @@ function median(array){
             Statistics
         </th>
         <th>
-            Chart
+            Graph
         </th>
     </tr>
 <tr>
@@ -232,7 +232,7 @@ function median(array){
             Statistics
         </th>
         <th>
-            Chart
+            Graph
         </th>
     </tr>
 <tr>
@@ -265,7 +265,7 @@ function median(array){
             Statistics
         </th>
         <th>
-            Chart
+            Graph
         </th>
     </tr>
 <tr>
@@ -289,7 +289,7 @@ function median(array){
             Statistics
         </th>
         <th>
-            Chart
+            Graph
         </th>
     </tr>
 <tr>
@@ -313,7 +313,7 @@ function median(array){
             Statistics
         </th>
         <th>
-            Chart
+            Graph
         </th>
     </tr>
 <tr>
@@ -337,7 +337,7 @@ function median(array){
             Statistics
         </th>
         <th>
-            Chart
+            Graph
         </th>
     </tr>
 <tr>
