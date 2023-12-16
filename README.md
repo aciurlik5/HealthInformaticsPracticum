@@ -1,3 +1,5 @@
+Final Project for Health Informatics Practicum
+
 To run locally 
   1. Download
   2. run 'npm start'
